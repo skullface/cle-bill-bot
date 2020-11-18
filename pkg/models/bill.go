@@ -160,11 +160,12 @@ func (b *Bill) FetchBillData() (string, string, []LegistarAction, error) {
 	return title, classification, actions, nil
 }
 
+// @TODO Replace Councilmatic URL check with Legistar default
 // GetTweetURL returns the Councilmatic URL if it exists for display and defaults
 // to returning the bill's Legistar URL
 func (b *Bill) GetTweetURL() string {
 	councilmaticURL := fmt.Sprintf(
-		"https://chicago.councilmatic.org/legislation/%s/",
+		"https://cityofcleveland.councilmatic.org/legislation/%s/",
 		strings.ToLower(b.GetCleanBillID()),
 	)
 	response, err := http.Get(councilmaticURL)
