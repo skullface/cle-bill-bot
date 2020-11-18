@@ -75,7 +75,7 @@ func (b *Bill) GetActions() []LegistarAction {
 
 // SearchBill tries to find the detail page for a bill from Legistar
 func (b *Bill) SearchBill() (string, error) {
-	response, err := http.Get("https://chicago.legistar.com/Legislation.aspx")
+	response, err := http.Get("https://cityofcleveland.legistar.com/Legislation.aspx")
 	if err != nil {
 		return "", err
 	}
@@ -97,7 +97,7 @@ func (b *Bill) SearchBill() (string, error) {
 		"ctl00_ContentPlaceHolder1_lstYearsAdvanced_ClientState": {"{\"value\":\"All\"}"},
 		"ctl00$ContentPlaceHolder1$btnSearch":                    {"Search Legislation"},
 	}
-	response, err = http.PostForm("https://chicago.legistar.com/Legislation.aspx", payload)
+	response, err = http.PostForm("https://cityofcleveland.legistar.com/Legislation.aspx", payload)
 	if err != nil {
 		return "", err
 	}
@@ -115,7 +115,7 @@ func (b *Bill) SearchBill() (string, error) {
 		}
 	})
 
-	return fmt.Sprintf("https://chicago.legistar.com/%s", billURL), nil
+	return fmt.Sprintf("https://cityofcleveland.legistar.com/%s", billURL), nil
 }
 
 // FetchBillData pulls updated LegistarAction information from a bill's detail URL
