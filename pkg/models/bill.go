@@ -253,11 +253,11 @@ func (b *Bill) CreateTweet(billURL string) string {
 // SetNextRun updates the time the bill should be queried next
 func (b *Bill) SetNextRun() {
 	// Set NextRun to a time in the future within a defined range
-	loc, _ := time.LoadLocation("America/Chicago")
+	loc, _ := time.LoadLocation("America/New_York")
 	now := time.Now().Add(time.Hour * time.Duration(12)).In(loc)
 	_, offset := now.Zone()
 
-	// Make sure it's between 9AM and 10PM Chicago with some randomness to stagger posts
+	// Make sure it's between 9AM and 10PM ET with some randomness to stagger posts
 	localHour := now.Hour() + (offset / 3600)
 	diffHours := 24
 	diffMinutes := 0
