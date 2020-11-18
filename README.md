@@ -1,8 +1,8 @@
-# Chicago Bill Bot
+# Cleveland Bill Bot
 
-[![Build status](https://github.com/City-Bureau/chi-bill-bot/workflows/CI%20Checks/badge.svg)](https://github.com/City-Bureau/chi-bill-bot/actions)
+[![Build status](https://github.com/skullface/cle-bill-bot/workflows/CI%20Checks/badge.svg)](https://github.com/skullface/cle-bill-bot/actions)
 
-Twitter bot for following Chicago City Council legislation. Tweet a bill identifier at the bot and it will track the bill and post any updates.
+Twitter bot for following Cleveland City Council legislation. Tweet a bill identifier at the bot and it will track the bill and post any updates.
 
 ## Setup
 
